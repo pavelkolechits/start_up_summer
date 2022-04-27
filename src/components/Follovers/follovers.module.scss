@@ -1,0 +1,13 @@
+.followers-wrap {
+    display: flex;
+    align-items:center;
+}
+
+.followers,
+.following {
+    display: flex;
+    align-items:center;
+}
+.count-followers, .count-following {
+    margin: 0 0 -3px 3px;
+}

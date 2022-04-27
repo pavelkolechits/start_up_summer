@@ -1,0 +1,37 @@
+.header {
+    width: 100vw;
+    height: var(--headerHeigth);
+    background-color: #0064EB;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 40px;
+}
+
+.input {
+    height: 40px;
+    width: 500px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    padding: 2px 2px 2px 45px;
+    
+}
+
+.input-wrap {
+    height: 40px;
+    width: 500px;
+    position: relative;
+    margin: 0 0 0 22px;
+
+    &::before {
+        content: url(../../assets/icons/search_icon_for_input.png);
+        width: 14px;
+        height: 14px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        position: absolute;
+        left: 20px;
+    }
+}
