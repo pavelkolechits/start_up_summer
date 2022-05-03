@@ -11,6 +11,16 @@ export function* getUserData(action) {
     );
     const request = yield result.json();
     yield put({ type: ACTIONS.GET_USER_DATA_SUCCESS, request });
+
+    if (request.message === "Not Found") {
+      return;
+    }
+    yield put({
+      type: ACTIONS.GET_USER_REPOSITORIES_REQUEST,
+      userName: action.userName,
+      limit: action.limit,
+      page: action.page,
+    });
   } catch (e) {
     alert(e);
   }

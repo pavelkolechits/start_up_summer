@@ -1,0 +1,64 @@
+.page {
+    width: 21px;
+    height: 25px;
+    outline: none;
+    border: none;
+    background-color: inherit;
+    margin: 0 5px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    cursor: pointer;
+    color:#808080;
+
+}
+
+.paginate-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+.arrow{
+    margin: 0 20px;
+    cursor: pointer;
+    width: 21px;
+    height: 25px;
+    color: #0064EB;
+    display: flex;
+    align-items:center;
+    justify-content: center;    
+    outline: none;
+    border: none;
+    background-color: inherit;
+    &:disabled{
+        color:#808080;
+        cursor: default;
+    }
+
+    
+}
+.active-page {
+    width: 21px;
+    height: 25px;
+    background-color:#0064EB;
+    color: #fff;
+    padding: 2px 6px;
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+   
+    
+
+}
+pre{
+    color:#808080;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+
