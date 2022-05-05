@@ -3,9 +3,14 @@
     padding: 0;
     box-sizing: border-box;
     --headerHeigth: 72px;
-}
-body{
-    width: 100vw;
-    height: 100vh;
+    --primaryColor: #0064EB;
+    --backgroundColor: #F9F9F9;
+    --fontFamily: 'Inter', sans-serif;
+
 }
 
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--backgroundColor);
+}

@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./informationForUser.module.scss";
 
 export const InformationForUser = ({ img, text }) => {

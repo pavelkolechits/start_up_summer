@@ -1,7 +1,6 @@
 import styles from "./notFoundPage.module.scss";
-import React from "react";
-import { InformationForUser } from "../../components/InformationForUser/InformationForUser";
 import not_found_icon from "../../assets/icons/page_not_found_icon.png";
+import { InformationForUser } from "../../components/InformationForUser/InformationForUser";
 
 export const NotFoundPage = () => {
   return (

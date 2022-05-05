@@ -1,25 +1,17 @@
-import { useState } from "react";
-import { ACTIONS } from "../../redux/constants";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
 import styles from "./paginate.module.scss";
-import { useEffect } from "react";
-import {
-  getPagesArray,
-  getNumbersShowedRepositories,
-  getPagesArrayForRender,
-  getPageCount,
-} from "./helpers";
-import { useMemo } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { ACTIONS } from "../../redux/constants";
+import {getPagesArray, getNumbersShowedRepositories, getPagesArrayForRender, getPageCount} from "./helpers";
 
 export const Paginate = ({ totalRepositories }) => {
   const [page, setPage] = useState(1);
   const user = useSelector((state) => state.manageUserDataReducer.user);
   const dispatch = useDispatch();
+
   useEffect(() => {
-    setPage(1)
-  },[user.login])
-  
+    setPage(1);
+  }, [user.login]);
 
   let pageCount = getPageCount(totalRepositories, 4);
   let pagesArray = getPagesArray(pageCount);
@@ -41,27 +33,20 @@ export const Paginate = ({ totalRepositories }) => {
   };
 
   const onClickNextArrow = (pages, page) => {
-    if (page === pages[pages.length - 1]) {
+    if (page === pages.length) {
       return;
     }
     setPage(page + 1);
     createDispatch(page + 1);
   };
 
-  const onClickPage = (i) => {
-    setPage(i);
+  const onClickPage = (page) => {
+    setPage(page);
     createDispatch(page);
   };
 
-  const numbersShowedRepositories = getNumbersShowedRepositories(
-    page,
-    pagesArray,
-    totalRepositories
-  );
-
-  const RepositoryPages = useMemo(() => {
-    return getPagesArrayForRender(pagesArray, page);
-  }, [totalRepositories]);
+  const numbersShowedRepositories = getNumbersShowedRepositories(page, pagesArray, totalRepositories);
+  const RepositoryPages = getPagesArrayForRender(pagesArray, page);
 
   return (
     <>
@@ -76,22 +61,20 @@ export const Paginate = ({ totalRepositories }) => {
             disabled={page === 1}
             className={styles.arrow}
           />
-
-          {RepositoryPages.map((i) => {
-            if (i === "...") {
+          {RepositoryPages.map((pageItem) => {
+            if (pageItem === "...") {
               return "...";
             }
             return (
               <button
-                key={i}
-                className={styles[page === i ? "active-page" : "page"]}
-                onClick={() => onClickPage(i)}
+                key={pageItem}
+                className={styles[page === pageItem ? "active-page" : "page"]}
+                onClick={() => onClickPage(pageItem)}
               >
-                {i}
+                {pageItem}
               </button>
             );
           })}
-
           <NextArrow
             disabled={page === pagesArray.length}
             onClick={() => onClickNextArrow(pagesArray, page)}

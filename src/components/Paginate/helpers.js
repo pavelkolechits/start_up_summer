@@ -1,4 +1,3 @@
-
 export const getPageCount = (totalRepositories, limit) => {
   return Math.ceil(totalRepositories / limit);
 };
@@ -12,8 +11,6 @@ export const getPagesArray = (totalPages) => {
 };
 
 export const getPagesArrayForRender = (PageArray, pageNumber) => {
- 
-
   let lastPage = PageArray.length;
 
   if (lastPage < 5) {
@@ -39,7 +36,3 @@ export const getNumbersShowedRepositories = (page, pagesArray, totalRepositories
   }
   return [page * 4 - 3, page * 4];
 };
-
-
-
-

@@ -27,8 +27,7 @@ export const Follovers = ({ followers, following }) => {
       <div className={styles.following}>
         <img src={followingIcon} alt="" />
         <p className={styles["count-following"]}>
-          {" "}
-          {checkIsDataMoreThan1000(following)}&nbsp; following{" "}
+          {checkIsDataMoreThan1000(following)}&nbsp; following
         </p>
       </div>
     );

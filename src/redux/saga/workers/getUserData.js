@@ -10,6 +10,7 @@ export function* getUserData(action) {
       })
     );
     const request = yield result.json();
+
     yield put({ type: ACTIONS.GET_USER_DATA_SUCCESS, request });
 
     if (request.message === "Not Found") {

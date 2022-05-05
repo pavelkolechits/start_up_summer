@@ -1,7 +1,29 @@
-.user-page{
+.user-page {
     width: 100%;
     height: 100%;
     display: flex;
     position: relative;
+
+    @media (max-width: 700px) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
+.repository-page {
+    width: 100%;
+    height: 100%;
+    background-color: var(--backgroundColor);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 0 56px 20px 0;
+
+    @media (max-width: 850px) {
+        padding: 0 30px 20px 0;
+    }
+
+    @media (max-width: 700px) {
+        padding: 0 20px 20px 20px;
+    }
+}

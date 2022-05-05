@@ -1,5 +1,5 @@
-import { ACTIONS } from "../../constants";
 import { call, put } from "@redux-saga/core/effects";
+import { ACTIONS } from "../../constants";
 export function* getRepositories(action) {
   try {
     const result = yield call(() =>
@@ -12,7 +12,7 @@ export function* getRepositories(action) {
       )
     );
     const request = yield result.json();
- 
+
     yield put({ type: ACTIONS.GET_USER_REPOSITORIES_SUCCESS, request });
   } catch (e) {
     alert(e);

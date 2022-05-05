@@ -1,6 +1,6 @@
-import { getUserData} from "../workers/getUserData";
-import { takeEvery} from "@redux-saga/core/effects";
 import {ACTIONS} from '../../constants'
+import { takeEvery} from "@redux-saga/core/effects";
+import { getUserData} from "../workers/getUserData";
 import { getRepositories } from "../workers/getRepositories";
 
 export function* getUserDataWatcher (){

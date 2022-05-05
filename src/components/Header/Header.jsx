@@ -1,11 +1,9 @@
 import styles from "./header.module.scss";
-import icon from "../../assets/icons/icon.svg";
-import { useState, memo } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { ACTIONS } from "../../redux/constants";
 import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { ACTIONS } from "../../redux/constants";
+import icon from "../../assets/icons/icon.svg";
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -25,7 +23,7 @@ export const Header = () => {
 
   return (
     <div className={styles.header}>
-      <img className={styles.icon} src={icon} alt="" />
+      <img className={styles.icon} src={icon} alt="/"/>
       <div className={styles["input-wrap"]}>
         <input
           onKeyDown={sendRequest}

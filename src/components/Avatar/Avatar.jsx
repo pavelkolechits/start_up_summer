@@ -11,10 +11,10 @@ export const Avatar = ({
 }) => {
   return (
     <div className={styles["avatar-wrap"]}>
-      <img className={styles.photo} src={photo} alt="" />
+      <img className={styles.photo} src={photo} alt="/" />
       <div className={styles["user-data"]}>
         <h3 className={styles["user-name"]}>{userName}</h3>
-        <a target="_blank" href={html_url} className={styles.login}>
+        <a rel="noreferrer" target="_blank" href={html_url} className={styles.login}>
           {login}
         </a>
         <div className={styles["followers-wrap"]}>
