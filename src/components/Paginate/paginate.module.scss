@@ -43,6 +43,10 @@
         cursor: default;
     }
 
+    @media (max-width: 480px) {
+        margin: 0 10px;
+    }
+
 
 }
 
@@ -73,5 +77,6 @@ pre {
 
     @media (max-width: 480px) {
         font-size: 10px;
+        letter-spacing: .5px;
     }
 }

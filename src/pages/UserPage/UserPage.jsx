@@ -20,7 +20,7 @@ export const UserPage = () => {
     if (user.message === "Not Found") {
       navigate("*");
     }
-    
+
     if (
       user.message ===
       "API rate limit exceeded for 185.128.200.31. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
@@ -49,6 +49,7 @@ export const UserPage = () => {
           />
           <div className={styles["repository-page"]}>
             {repositories.length ? <RepositoriesList /> : <Loader />}
+          
             <Paginate totalRepositories={user.public_repos} />
           </div>
         </div>
