@@ -19,7 +19,6 @@ export function* getUserData(action) {
     yield put({
       type: ACTIONS.GET_USER_REPOSITORIES_REQUEST,
       userName: action.userName,
-      limit: action.limit,
       page: action.page,
     });
   } catch (e) {
