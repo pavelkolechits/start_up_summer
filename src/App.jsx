@@ -1,5 +1,5 @@
 import "./App.scss";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { UserPage } from "./pages/UserPage/UserPage";
@@ -15,6 +15,7 @@ export const App = () => {
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/limit-exceeded" element={<ApiRateLimitExceededPage />} />
       </Route>
+      <Route path="*" element={<Navigate to="/"  />}></Route>
     </Routes>
   );
 };
