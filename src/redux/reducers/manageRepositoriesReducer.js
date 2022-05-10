@@ -9,6 +9,7 @@ export const manageRepositoriesReducer = (state = initialState, action) => {
       return initialState;
     }
     case ACTIONS.GET_USER_REPOSITORIES_SUCCESS: {
+      
       return {
         ...state,
         repositories:

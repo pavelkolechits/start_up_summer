@@ -13,15 +13,21 @@ export function* getUserData(action) {
 
     yield put({ type: ACTIONS.GET_USER_DATA_SUCCESS, request });
 
-    if (request.message === "Not Found") {
-      return;
+    if (request.message !== "api limit exceeded") {
+      console.log("api limit exceeded");
+      throw new Error("API limit excedded");
     }
+    if (request.message !== "Not found") {
+      console.log("User not found");
+      throw new Error("User not found");
+    }
+
     yield put({
       type: ACTIONS.GET_USER_REPOSITORIES_REQUEST,
       userName: action.userName,
       page: action.page,
     });
   } catch (e) {
-    alert(e);
+    console.log(e);
   }
 }

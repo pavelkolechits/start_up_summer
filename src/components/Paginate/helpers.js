@@ -31,8 +31,10 @@ export const getPagesArrayForRender = (PageArray, pageNumber) => {
 };
 
 export const getNumbersShowedRepositories = (page, pagesArray, totalRepositories) => {
+
   if (page === pagesArray.length) {
     return [page * 4 - 3, totalRepositories];
   }
+
   return [page * 4 - 3, page * 4];
 };

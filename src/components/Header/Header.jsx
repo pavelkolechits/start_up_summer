@@ -6,7 +6,7 @@ import { ACTIONS } from "../../redux/constants";
 import icon from "../../assets/icons/icon.svg";
 
 export const Header = () => {
- 
+ console.log("render")
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [userName, setUserName] = useState("");
