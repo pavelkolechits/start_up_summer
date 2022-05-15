@@ -32,7 +32,7 @@ export const UserPage = () => {
     if (!user.login) {
       dispatch({ type: ACTIONS.GET_USER_DATA_REQUEST, userName: params.user });
     }
-  },[ user]);
+  },[user]);
 
   return (
     <>
