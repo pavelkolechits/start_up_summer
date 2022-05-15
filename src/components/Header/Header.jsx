@@ -6,7 +6,7 @@ import { ACTIONS } from "../../redux/constants";
 import icon from "../../assets/icons/icon.svg";
 
 export const Header = () => {
- console.log("render")
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [userName, setUserName] = useState("");
@@ -16,7 +16,7 @@ export const Header = () => {
   };
 
   const sendRequest = (event) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && userName.trim() !== "" ) {
       dispatch({ type: ACTIONS.GET_USER_DATA_REQUEST, userName, page: 1 });
       navigate(`/${userName}`);
     }

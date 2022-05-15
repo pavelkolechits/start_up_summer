@@ -15,7 +15,6 @@ export const App = () => {
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/limit-exceeded" element={<ApiRateLimitExceededPage />} />
       </Route>
-      <Route path="*" element={<Navigate to="/"  />}></Route>
     </Routes>
   );
 };

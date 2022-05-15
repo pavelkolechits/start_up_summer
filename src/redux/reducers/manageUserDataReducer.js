@@ -5,8 +5,11 @@ const initialState = {
 
 export const manageUserDataReducer = (state = initialState, action) => {
   switch (action.type) {
+    case ACTIONS.GET_USER_DATA_REQUEST: {
+      return initialState
+    }
     case ACTIONS.GET_USER_DATA_SUCCESS: {
-      if (action.request.message && action.request.message !== "Not found" ) {
+      if (action.request.message !== "Not Found" && !action.request.login) {
         return {
           ...state,
           user: { message: "api limit exceded", fullMessage: action.request },

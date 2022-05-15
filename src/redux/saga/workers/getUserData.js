@@ -12,13 +12,10 @@ export function* getUserData(action) {
     const request = yield result.json();
 
     yield put({ type: ACTIONS.GET_USER_DATA_SUCCESS, request });
-
-    if (request.message === "api limit exceeded") {
-      console.log("api limit exceeded");
+    if (request.message?.includes("exceeded")) {
       throw new Error("API limit excedded");
     }
-    if (request.message === "Not found") {
-      console.log("User not found");
+    if (request.message === "Not Found") {
       throw new Error("User not found");
     }
 

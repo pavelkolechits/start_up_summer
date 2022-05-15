@@ -1,4 +1,5 @@
 import styles from "./userPage.module.scss";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { ACTIONS } from "../../redux/constants";
@@ -13,23 +14,25 @@ export const UserPage = () => {
   const repositories = useSelector(
     (state) => state.manageRepositoriesReducer.repositories
   );
+
   const params = useParams();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (user.message === "Not Found") {
+      navigate("*");
+      return
+    }
 
+    if (user.message === "api limit exceded") {
+      navigate("/limit-exceeded");
+      return;
+    }
 
-  // if (user.message === "Not Found") {
-  //   navigate("*");
-  // }
-
-  if (user.message === "api limit exceded") {
-    navigate("/limit-exceeded");
-    return
-  }
-
-  if (!user.login) {
-    dispatch({ type: ACTIONS.GET_USER_DATA_REQUEST, userName: params.user });
-  }
+    if (!user.login) {
+      dispatch({ type: ACTIONS.GET_USER_DATA_REQUEST, userName: params.user });
+    }
+  },[ user]);
 
   return (
     <>
@@ -47,7 +50,6 @@ export const UserPage = () => {
           />
           <div className={styles["repository-page"]}>
             {repositories.length ? <RepositoriesList /> : <Loader />}
-
             <Paginate totalRepositories={user.public_repos} />
           </div>
         </div>

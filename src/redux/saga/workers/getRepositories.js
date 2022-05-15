@@ -15,6 +15,6 @@ export function* getRepositories(action) {
 
     yield put({ type: ACTIONS.GET_USER_REPOSITORIES_SUCCESS, request });
   } catch (e) {
-    alert(e);
+    console.log(e);
   }
 }
